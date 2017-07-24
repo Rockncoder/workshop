@@ -1,0 +1,8 @@
+<a md-mini-fab [routerLink]="['/contact-details', -1]"><md-icon>add</md-icon></a>
+<ul>
+  <li *ngFor="let contact of contacts | async ">
+    <a md-button [routerLink]="['/contact-details', contact.$key]">{{contact.lastName}}, {{contact.firstName}}</a>
+    <button md-button (click)="onDelete(contact.$key)"><md-icon>delete</md-icon></button>
+  </li>
+</ul>
+
